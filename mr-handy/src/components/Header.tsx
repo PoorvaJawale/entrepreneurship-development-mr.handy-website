@@ -10,7 +10,7 @@ export function Header() {
   const { t } = useI18n();
   return (
     <header className="sticky top-0 z-40 backdrop-blur border-b border-black/5 dark:border-white/10 bg-white/60 dark:bg-black/30">
-      <div className="w-full px-16 py-4 grid grid-cols-[1fr_auto_1fr] items-center">
+      <div className="w-full px-16 py-3 grid grid-cols-[1fr_auto_1fr] items-center">
         <div className="justify-self-start">
           <Link href="/" className="flex items-center">
             <Image

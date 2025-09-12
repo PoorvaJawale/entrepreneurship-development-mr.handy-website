@@ -28,7 +28,7 @@ export function CharacterAvatar({ href, imgSrc, hoverSrc, title }: CharacterAvat
             alt={title}
             fill
             sizes="(max-width: 768px) 224px, 288px"
-            className={`object-cover transition-opacity duration-300 ${hoverSrc ? "opacity-100 group-hover:opacity-0" : "opacity-100"}`}
+            className={`object-cover ${hoverSrc ? "opacity-100 group-hover:opacity-0" : "opacity-100"}`}
             priority
           />
           {/* Hover image (expression change) */}
@@ -38,14 +38,14 @@ export function CharacterAvatar({ href, imgSrc, hoverSrc, title }: CharacterAvat
               alt={`${title} hover`}
               fill
               sizes="(max-width: 768px) 224px, 288px"
-              className="object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              className="object-cover opacity-0 group-hover:opacity-100"
               priority
             />
           )}
           {/* Bottom fade to blend with background */}
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-black/80" />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent" style={{ background: 'linear-gradient(to bottom, transparent 0%, rgba(18, 19, 18, 0.3) 50%, #121312 100%)' }} />
         </div>
-        <div className="mt-3 text-sm font-medium opacity-90 group-hover:opacity-100 transition-opacity">
+        <div className="mt-3 text-xl font-bold opacity-90 group-hover:opacity-100">
           {title}
         </div>
       </motion.div>
