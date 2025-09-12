@@ -9,13 +9,13 @@ export function Header() {
   const { t } = useI18n();
   return (
     <header className="sticky top-0 z-40 backdrop-blur border-b border-black/5 dark:border-white/10 bg-white/60 dark:bg-black/30">
-      <div className="mx-auto max-w-6xl px-4 py-3 grid grid-cols-[1fr_auto_1fr] items-center">
+      <div className="w-full px-16 py-4 grid grid-cols-[1fr_auto_1fr] items-center">
         <div className="justify-self-start">
           <Link href="/" className="font-semibold tracking-tight text-xl">
             {t("brand")}
           </Link>
         </div>
-        <nav className="hidden sm:flex items-center gap-6 text-sm justify-self-center">
+        <nav className="hidden sm:flex items-center gap-6 text-sm font-semibold justify-self-center">
           <Link href="/about" className="hover:opacity-80 transition-opacity">{t("nav_about")}</Link>
           <Link href="/contact" className="hover:opacity-80 transition-opacity">{t("nav_contact")}</Link>
           <Link href="/join" className="hover:opacity-80 transition-opacity">{t("nav_join")}</Link>
