@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useI18n } from "@/components/LanguageProvider";
@@ -11,8 +12,15 @@ export function Header() {
     <header className="sticky top-0 z-40 backdrop-blur border-b border-black/5 dark:border-white/10 bg-white/60 dark:bg-black/30">
       <div className="w-full px-16 py-4 grid grid-cols-[1fr_auto_1fr] items-center">
         <div className="justify-self-start">
-          <Link href="/" className="font-semibold tracking-tight text-xl">
-            {t("brand")}
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/mr-handy-logo.png"
+              alt={t("brand")}
+              width={120}
+              height={40}
+              className="h-8 w-auto"
+              priority
+            />
           </Link>
         </div>
         <nav className="hidden sm:flex items-center gap-6 text-sm font-semibold justify-self-center">
