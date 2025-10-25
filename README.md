@@ -68,8 +68,6 @@ You can view the complete **Entrepreneurial Development Project Report** (PDF) h
 
 [Download Mr. Handy Case Study](./case-study/Mr_Handy_Case_Study.pdf)  
 
-> **Tip**: Place the PDF inside a folder named `case-study` in your repository to ensure the link works correctly.
-
 ## 🤝 Contributing
 
 We welcome contributions to enhance Mr. Handy:
