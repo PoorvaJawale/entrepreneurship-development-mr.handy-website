@@ -50,9 +50,9 @@ Mr. Handy’s revenue model is designed to be **sustainable, scalable, and partn
 
 ### 📅 Milestones
 
-- *Prototype Development*: Completed in [August, 2025].
-- *Beta Testing*: Conducted in [September, 2025].
-- *Official Launch*: Scheduled for [September, 2025].
+- **Prototype Development**: Completed in [August, 2025].
+- **Beta Testing**: Conducted in [September, 2025].
+- **Official Launch**: Scheduled for [September, 2025].
 
 ## 🎓 Course Context
 
