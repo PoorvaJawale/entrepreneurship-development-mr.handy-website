@@ -34,6 +34,8 @@ const en: Dictionary = {
   join_title: "Join Us",
   join_body:
     "Are you a skilled professional looking to offer services on Mr. Handy? Join our network of trusted experts and grow your business.",
+  login_title: "Welcome Back",
+  login_body: "Sign in to your account with your name, email, and password."
 };
 
 const hi: Dictionary = {
@@ -68,6 +70,8 @@ const hi: Dictionary = {
   join_title: "हमसे जुड़ें",
   join_body:
     "क्या आप कुशल प्रोफेशनल हैं? मिस्टर हैंडी पर अपनी सेवाएँ दें, हमारे विश्वसनीय नेटवर्क से जुड़ें और अपना व्यवसाय बढ़ाएँ।",
+  login_title: "वापसी पर स्वागत है",
+  login_body: "अपने नाम, ईमेल और पासवर्ड के साथ अपने खाते में साइन इन करें।"
 };
 
 const mr: Dictionary = {
@@ -102,6 +106,8 @@ const mr: Dictionary = {
   join_title: "आमच्यात सामील व्हा",
   join_body:
     "तुम्ही कुशल व्यावसायिक आहात का? Mr. Handy वर सेवा द्या, आमच्या विश्वासार्ह नेटवर्कमध्ये सामील व्हा आणि तुमचा व्यवसाय वाढवा.",
+  login_title: "पुन्हा स्वागत आहे",
+  login_body: "तुमचे नाव, ईमेल आणि पासवर्डसह तुमच्या खात्यात साइन इन करा."
 };
 
 export const dictionaries: Record<Locale, Dictionary> = { en, hi, mr };
