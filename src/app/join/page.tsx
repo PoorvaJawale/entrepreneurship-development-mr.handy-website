@@ -45,19 +45,19 @@ export default function JoinPage() {
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+            <label htmlFor="name" className="block text-sm font-medium text-gray-900 mb-2">Full Name</label>
             <input 
               required
               id="name"
               name="name" 
               type="text" 
               placeholder="John Doe"
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder:text-gray-500"
             />
           </div>
 
           <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+            <label htmlFor="phone" className="block text-sm font-medium text-gray-900 mb-2">Phone Number</label>
             <input 
               required
               id="phone"
@@ -69,7 +69,7 @@ export default function JoinPage() {
           </div>
 
           <div>
-            <label htmlFor="city" className="block text-sm font-medium text-gray-700 mb-2">City</label>
+            <label htmlFor="city" className="block text-sm font-medium text-gray-900 mb-2">City</label>
             <input 
               required
               id="city"
@@ -81,7 +81,7 @@ export default function JoinPage() {
           </div>
 
           <div>
-            <label htmlFor="serviceType" className="block text-sm font-medium text-gray-700 mb-2">Service Type</label>
+            <label htmlFor="serviceType" className="block text-sm font-medium text-gray-900 mb-2">Service Type</label>
             <select 
               required
               id="serviceType"

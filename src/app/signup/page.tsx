@@ -5,11 +5,13 @@ import { useI18n } from "@/components/LanguageProvider";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { signUpUser } from "@/actions/auth";
+import { Eye, EyeOff } from "lucide-react";
 
 export default function SignupPage() {
   const { t } = useI18n();
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -50,19 +52,19 @@ export default function SignupPage() {
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Name</label>
+            <label htmlFor="name" className="block text-sm font-medium text-gray-900 mb-2">Name</label>
             <input 
               required
               id="name"
               name="name" 
               type="text" 
               placeholder="John Doe"
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder:text-gray-500"
             />
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+            <label htmlFor="email" className="block text-sm font-medium text-gray-900 mb-2">Email Address</label>
             <input 
               required
               id="email"
@@ -75,16 +77,25 @@ export default function SignupPage() {
 
           <div>
             <div className="flex items-center justify-between mb-2">
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
+              <label htmlFor="password" className="block text-sm font-medium text-gray-900">Password</label>
             </div>
-            <input 
-              required
-              id="password"
-              name="password" 
-              type="password" 
-              placeholder="••••••••"
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-            />
+            <div className="relative">
+              <input 
+                required
+                id="password"
+                name="password" 
+                type={showPassword ? "text" : "password"} 
+                placeholder="••••••••"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder:text-gray-500 pr-12"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 focus:outline-none"
+              >
+                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+              </button>
+            </div>
           </div>
 
           <button 

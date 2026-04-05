@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛠️ Mr. Handy - House Maintenance, One Click Away
 
-## Getting Started
+Mr. Handy is a modern, two-sided marketplace connecting homeowners with trusted local professionals including plumbers, electricians, and carpenters. Built with speed and reliability in mind.
 
-First, run the development server:
+---
+
+## 🚀 Getting Started
+
+Experience the platform in your local development environment:
+
+1. **Install Dependencies** (if you haven't already):
+   ```bash
+   npm install
+   ```
+
+2. **Run the Development Server**:
+   ```bash
+   npm run dev
+   ```
+
+3. **Visit the App**:
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## 🗄️ Database Management
+
+We use **Prisma** as our ORM and **SQLite** for the database. To manage your data visually and "beautifully":
+
+### Open Prisma Studio
+Run the following command to open a powerful, interactive dashboard for your database:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npx prisma studio
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Sync Schema Changes
+Whenever you modify `prisma/schema.prisma`, run this command to update your local database structure:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npx prisma db push
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+> [!TIP]
+> **Prisma Studio** will host a local web application (usually at `http://localhost:5555`) where you can view, edit, and delete records in the `User`, `Worker`, and `Booking` tables without writing a single line of SQL.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## ✨ Key Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **🏠 Multi-Service Booking**: Seamless workflows for Plumbing, Electrical, and Carpentry services.
+- **🔐 Secure Authentication**: Custom-built login and sign-up system with encrypted passwords using `bcryptjs`.
+- **🌍 Multi-language Support**: Fully localized in English, Hindi, and Marathi.
+- **🎨 Premium UI**: Smooth transitions and modern aesthetics powered by Framer Motion and Tailwind CSS.
+- **📱 Responsive Design**: Optimized for both mobile and desktop experiences.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🛠️ Tech Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Framework**: [Next.js 15+](https://nextjs.org/) (App Router)
+- **Database**: [Prisma](https://www.prisma.io/) with SQLite
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🏗️ Project Structure
+
+- `/src/app`: Next.js pages and layouts
+- `/src/actions`: Server actions for database operations (Auth, Bookings)
+- `/src/components`: Reusable UI components
+- `/prisma`: Database schema and migrations

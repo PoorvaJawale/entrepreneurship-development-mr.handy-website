@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { PageTransition } from "@/components/PageTransition";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import { Preloader } from "@/components/Preloader";
+import { cookies } from "next/headers";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -18,17 +19,20 @@ export const metadata: Metadata = {
   description: "House Maintenance, One Click Away",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const isLoggedIn = cookieStore.has("userId");
+
   return (
     <html lang="en">
       <body className={`${poppins.variable} antialiased`}>
         <Preloader />
         <LanguageProvider>
-          <Header />
+          <Header isLoggedIn={isLoggedIn} />
           <main className="mx-auto max-w-[95%] relative">
             <PageTransition>
               {children}

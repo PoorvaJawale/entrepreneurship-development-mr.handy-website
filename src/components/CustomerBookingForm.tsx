@@ -61,18 +61,18 @@ export default function CustomerBookingForm({ serviceType }: { serviceType: stri
 
         <form onSubmit={handleSearch} className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+            <label className="block text-sm font-medium text-gray-900 mb-2">Your Name</label>
             <input 
               required
               type="text" 
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Enter your name"
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 placeholder:text-gray-500"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Your City</label>
+            <label className="block text-sm font-medium text-gray-900 mb-2">Your City</label>
             <div className="flex gap-2">
               <input 
                 required
@@ -80,7 +80,7 @@ export default function CustomerBookingForm({ serviceType }: { serviceType: stri
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
                 placeholder="Enter city"
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 placeholder:text-gray-500"
               />
               <button 
                 type="submit" 

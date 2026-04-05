@@ -5,9 +5,17 @@ import Image from "next/image";
 import React from "react";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useI18n } from "@/components/LanguageProvider";
+import { logoutUser } from "@/actions/auth";
+import { useRouter } from "next/navigation";
 
-export function Header() {
+export function Header({ isLoggedIn }: { isLoggedIn?: boolean }) {
   const { t } = useI18n();
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    await logoutUser();
+    router.refresh();
+  };
   return (
     <header className="sticky top-0 z-40 backdrop-blur border-b border-black/5 dark:border-white/10 bg-white/60 dark:bg-black/30">
       <div className="w-full px-16 py-3 grid grid-cols-[1fr_auto_1fr] items-center">
@@ -30,8 +38,19 @@ export function Header() {
         </nav>
         <div className="flex items-center gap-3 justify-self-end">
           <LanguageSwitcher />
-          <Link href="/login" className="text-sm font-semibold hover:opacity-80 transition-opacity">Log In</Link>
-          <Link href="/signup" className="rounded-md px-4 py-2 border border-black/15 dark:border-white/20 bg-black text-white dark:bg-white dark:text-black text-sm hover:opacity-90 transition">{t("signup")}</Link>
+          {isLoggedIn ? (
+            <button 
+              onClick={handleLogout}
+              className="text-sm font-semibold hover:opacity-80 transition-opacity cursor-pointer"
+            >
+              Log Out
+            </button>
+          ) : (
+            <>
+              <Link href="/login" className="text-sm font-semibold hover:opacity-80 transition-opacity">Log In</Link>
+              <Link href="/signup" className="rounded-md px-4 py-2 border border-black/15 dark:border-white/20 bg-black text-white dark:bg-white dark:text-black text-sm hover:opacity-90 transition">{t("signup")}</Link>
+            </>
+          )}
         </div>
       </div>
     </header>
